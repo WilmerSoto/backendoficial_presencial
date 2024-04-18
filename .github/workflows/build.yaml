@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - master
+      - reserva
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
