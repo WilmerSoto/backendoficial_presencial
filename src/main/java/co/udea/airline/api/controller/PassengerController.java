@@ -2,7 +2,7 @@ package co.udea.airline.api.controller;
 
 import co.udea.airline.api.model.jpa.model.Passenger;
 import co.udea.airline.api.service.PassengerService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -10,8 +10,8 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/v1/passenger")
+@RequiredArgsConstructor
 public class PassengerController {
-    @Autowired
     private PassengerService passengerService;
 
     @GetMapping("/passengers")

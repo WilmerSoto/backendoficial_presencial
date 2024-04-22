@@ -1,15 +1,16 @@
 package co.udea.airline.api.service;
 import co.udea.airline.api.model.jpa.model.Booking;
 import co.udea.airline.api.model.jpa.repository.BookingRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
 @Service
+@RequiredArgsConstructor
 public class BookingService {
-    @Autowired
+
     BookingRepository bookingRepository;
 
     public List<Booking> getBookings() {

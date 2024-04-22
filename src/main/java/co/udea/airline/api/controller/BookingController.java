@@ -3,7 +3,6 @@ package co.udea.airline.api.controller;
 import co.udea.airline.api.model.jpa.model.Booking;
 import co.udea.airline.api.service.BookingService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
