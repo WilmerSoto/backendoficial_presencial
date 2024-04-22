@@ -14,11 +14,11 @@ public class Person {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "PERSON_ID") // TODO: create name conversion strategy
+    @Column(name = "PERSON_ID")
     private Long personId;
 
     @Column(name = "IDENTIFICATION_NUMBER")
-    private String id_number;
+    private String idNumber;
 
     @Column(name = "FIRST_NAME")
     private String firstName;

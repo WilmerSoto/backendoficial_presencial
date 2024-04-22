@@ -1,6 +1,6 @@
 package co.udea.airline.api.utils.common;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.context.MessageSource;
 import org.springframework.context.NoSuchMessageException;
 import org.springframework.context.support.MessageSourceAccessor;
@@ -13,9 +13,9 @@ import java.util.Locale;
  * Helper to simplify accessing i18n messages in code.
  */
 @Component
+@RequiredArgsConstructor
 public class Messages {
 
-    @Autowired
     private MessageSource messageSource;
 
     private MessageSourceAccessor accessor;
