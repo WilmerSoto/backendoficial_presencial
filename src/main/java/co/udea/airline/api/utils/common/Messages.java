@@ -18,10 +18,14 @@ public class Messages {
 
     private MessageSource messageSource;
 
+    public void setMessageSource(MessageSource messageSource) {
+        this.messageSource = messageSource;
+    }
+
     private MessageSourceAccessor accessor;
 
     @PostConstruct
-    private void init() {
+    public void init() {
         accessor = new MessageSourceAccessor(messageSource, Locale.ENGLISH);
     }
 
