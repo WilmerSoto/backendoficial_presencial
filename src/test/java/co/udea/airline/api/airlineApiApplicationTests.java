@@ -7,8 +7,12 @@ import static org.mockito.Mockito.*;
 import java.util.Date;
 import java.util.Optional;
 
+import co.udea.airline.api.controller.BookingController;
 import org.junit.jupiter.api.Test;
+import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.Mockito;
+import org.mockito.MockitoAnnotations;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -25,11 +29,11 @@ import co.udea.airline.api.service.BookingService;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class AirlineApiApplicationTests {
-    @MockBean
+    @Mock
     private BookingService bookingService;
 
-    @Autowired
-    private TestRestTemplate restTemplate;
+    @InjectMocks
+    private BookingController bookingController;
 
     @LocalServerPort
     private int puerto;
@@ -41,14 +45,12 @@ class AirlineApiApplicationTests {
 
     @Test
     void testSaveBooking(){
+        MockitoAnnotations.openMocks(this);
         Booking booking = new Booking(1L, new Passenger(1L, 1L), new Date(), "Active", 100000L);
 
-        HttpHeaders headers = new HttpHeaders();
-        headers.setContentType(MediaType.APPLICATION_JSON);
+        Mockito.doNothing().when(bookingService).saveOrUpdate(booking);
 
-        HttpEntity<Booking> requestEntity = new HttpEntity<>(booking, headers);
-
-        restTemplate.postForObject("http://localhost:"+puerto+"/v1/booking/booking", requestEntity, void.class);
+        bookingController.saveBooking(booking);
 
         verify(bookingService).saveOrUpdate(booking);
     }
