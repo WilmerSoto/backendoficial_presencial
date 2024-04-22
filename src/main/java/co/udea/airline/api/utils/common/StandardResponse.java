@@ -1,5 +1,10 @@
 package co.udea.airline.api.utils.common;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Setter
+@Getter
 public class StandardResponse<T> {
 
     private int status;
@@ -45,38 +50,6 @@ public class StandardResponse<T> {
         this.status = status;
         this.message = message;
         this.devMesssage = devMesssage;
-        this.body = body;
-    }
-
-    public int getStatus() {
-        return status;
-    }
-
-    public void setStatus(int status) {
-        this.status = status;
-    }
-
-    public String getMessage() {
-        return message;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
-    }
-
-    public String getDevMesssage() {
-        return devMesssage;
-    }
-
-    public void setDevMesssage(String devMesssage) {
-        this.devMesssage = devMesssage;
-    }
-
-    public T getBody() {
-        return body;
-    }
-
-    public void setBody(T body) {
         this.body = body;
     }
 
