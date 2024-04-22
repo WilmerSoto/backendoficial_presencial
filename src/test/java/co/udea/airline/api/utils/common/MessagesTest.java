@@ -12,7 +12,7 @@ import org.mockito.MockitoAnnotations;
 import org.springframework.context.MessageSource;
 import org.springframework.context.NoSuchMessageException;
 
-public class MessagesTest {
+class MessagesTest {
     private Messages messages;
 
     @Mock
@@ -27,7 +27,7 @@ public class MessagesTest {
     }
 
     @Test
-    public void testGetMessage_Success() {
+    void testGetMessage_Success() {
         String code = "test.message";
         String expectedMessage = "Test Message";
         when(messageSource.getMessage(code, null, Locale.ENGLISH)).thenReturn(expectedMessage);
@@ -38,7 +38,7 @@ public class MessagesTest {
     }
 
     @Test
-    public void testGetMessage_NoSuchMessageException() {
+    void testGetMessage_NoSuchMessageException() {
         String code = "nonexistent.message";
         when(messageSource.getMessage(code, null, Locale.ENGLISH)).thenThrow(NoSuchMessageException.class);
 
