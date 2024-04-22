@@ -7,7 +7,7 @@ public class GeneralRuntimeException extends RuntimeException {
 
     private static final long serialVersionUID = 1L;
 
-    private String message;
+    private final String message;
     private String translationKey;
 
 
@@ -33,6 +33,7 @@ public class GeneralRuntimeException extends RuntimeException {
         return translationKey;
     }
 
+    @Override
     public String getMessage() {
         return message;
     }
