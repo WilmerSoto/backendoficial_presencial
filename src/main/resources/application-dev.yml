@@ -27,10 +27,10 @@ spring:
   messages:
     basename: bundles/apiLanguageBundle
 
-ssmu-api:
+airline-api:
   openapi:
-    dev-url: http://localhost:8080/ssmu-api
-    prod-url: https://ssmu-api.com
+    dev-url: http://localhost:8080/
+    prod-url: https://example.com
 
 logging:
   level:
