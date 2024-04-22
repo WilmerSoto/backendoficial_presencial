@@ -22,11 +22,11 @@ public class Booking {
     private Passenger passenger;
 
     @Column(name = "BOOKING_DATE")
-    private Date booking_date;
+    private Date bookingDate;
 
     @Column(name = "BOOKING_STATUS")
-    private String booking_status;
+    private String bookingStatus;
 
     @Column(name = "TOTAL_PRICE")
-    private Long total_price;
+    private Long totalPrice;
 }
