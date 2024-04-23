@@ -43,6 +43,4 @@ public class Person {
 
     @Column(name = "ACCESS_KEY")
     private String password;
-
-
 }

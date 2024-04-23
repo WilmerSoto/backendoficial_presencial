@@ -6,101 +6,56 @@ import java.sql.Date;
 
 import org.junit.jupiter.api.Test;
 
-public class PersonTest {
+class PersonTest {
+    
     @Test
-    void testGetBirthDate() {
-        Person person = new Person();
-        Date expected = new Date(1619113200000L);
-        person.setBirthDate(expected);
-        assertEquals(expected, person.getBirthDate());
-    }
+    void testPersonGettersAndSetters() {
 
-    @Test
-    void testGetCity() {
+        //Arrange
         Person person = new Person();
-        String expected = "Medellin";
-        person.setCity(expected);
-        assertEquals(expected, person.getCity());
-    }
+        Long expectedPersonId = 1L;
+        String expectedIdNumber = "123456789";
+        String expectedFirstName = "John";
+        String expectedLastName = "Doe";
+        Character expectedGenre = 'M';
+        Date expectedBirthDate = new Date(1619113200000L);
+        String expectedPhoneNumber = "123456789";
+        String expectedCountry = "USA";
+        String expectedProvince = "California";
+        String expectedCity = "Los Angeles";
+        String expectedResidence = "123 Main St";
+        String expectedEmail = "john.doe@example.com";
+        String expectedPassword = "password123";
 
-    @Test
-    void testGetCountry() {
-        Person person = new Person();
-        String expected = "Colombia";
-        person.setCountry(expected);
-        assertEquals(expected, person.getCountry());
-    }
+        //Act
+        person.setPersonId(expectedPersonId);
+        person.setIdNumber(expectedIdNumber);
+        person.setFirstName(expectedFirstName);
+        person.setLastName(expectedLastName);
+        person.setGenre(expectedGenre);
+        person.setBirthDate(expectedBirthDate);
+        person.setPhoneNumber(expectedPhoneNumber);
+        person.setCountry(expectedCountry);
+        person.setProvince(expectedProvince);
+        person.setCity(expectedCity);
+        person.setResidence(expectedResidence);
+        person.setEmail(expectedEmail);
+        person.setPassword(expectedPassword);
 
-    @Test
-    void testGetEmail() {
-        Person person = new Person();
-        String expected = "juan@gmail.com";
-        person.setEmail(expected);
-        assertEquals(expected, person.getEmail());
-    }
-
-    @Test
-    void testGetFirstName() {
-        Person person = new Person();
-        String expected = "juan";
-        person.setFirstName(expected);
-        assertEquals(expected, person.getFirstName());
-    }
-
-    @Test
-    void testGetIdNumber() {
-        Person person = new Person();
-        String expected = "123456789";
-        person.setIdNumber(expected);
-        assertEquals(expected, person.getIdNumber());
-    }
-
-    @Test
-    void testGetLastName() {
-        Person person = new Person();
-        String expected = "Escobar";
-        person.setLastName(expected);
-        assertEquals(expected, person.getLastName());
-    }
-
-    @Test
-    void testGetPassword() {
-        Person person = new Person();
-        String expected = "1234";
-        person.setPassword(expected);
-        assertEquals(expected, person.getPassword());
-    }
-
-    @Test
-    void testGetPersonId() {
-        Person person = new Person();
-        Long expectedId = 1L;
-        person.setPersonId(expectedId);
-        assertEquals(expectedId, person.getPersonId());
-    }
-
-    @Test
-    void testGetPhoneNumber() {
-        Person person = new Person();
-        String expected = "123456789";
-        person.setPhoneNumber(expected);
-        assertEquals(expected, person.getPhoneNumber());
-    }
-
-    @Test
-    void testGetProvince() {
-        Person person = new Person();
-        String expected = "Province";
-        person.setProvince(expected);
-        assertEquals(expected, person.getProvince());
-    }
-
-    @Test
-    void testGetResidence() {
-        Person person = new Person();
-        String expected = "Residence";
-        person.setResidence(expected);
-        assertEquals(expected, person.getResidence());
+        //Assert 
+        assertEquals(expectedPersonId, person.getPersonId());
+        assertEquals(expectedIdNumber, person.getIdNumber());
+        assertEquals(expectedFirstName, person.getFirstName());
+        assertEquals(expectedLastName, person.getLastName());
+        assertEquals(expectedGenre, person.getGenre());
+        assertEquals(expectedBirthDate, person.getBirthDate());
+        assertEquals(expectedPhoneNumber, person.getPhoneNumber());
+        assertEquals(expectedCountry, person.getCountry());
+        assertEquals(expectedProvince, person.getProvince());
+        assertEquals(expectedCity, person.getCity());
+        assertEquals(expectedResidence, person.getResidence());
+        assertEquals(expectedEmail, person.getEmail());
+        assertEquals(expectedPassword, person.getPassword());
     }
     
 }
