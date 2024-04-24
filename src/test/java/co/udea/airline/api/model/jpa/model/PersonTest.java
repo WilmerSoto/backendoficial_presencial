@@ -5,7 +5,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.sql.Date;
 
 import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
 
+@SpringBootTest
 class PersonTest {
     
     @Test

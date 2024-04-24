@@ -35,7 +35,5 @@ public class Messages {
         } catch (NoSuchMessageException exception) {
             return "No hay mensaje disponible para mostrar.";
         }
-
     }
-
 }

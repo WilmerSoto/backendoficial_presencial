@@ -17,6 +17,6 @@ public class AirlineApiApplication {
     public OpenAPI customOpenAPI() {
         return new OpenAPI().info(new Info()
                 .title("RESERVATIONS SITAS")
-                .description("Messi"));
+                .description("A backend service for a flight booking application"));
     }
 }
